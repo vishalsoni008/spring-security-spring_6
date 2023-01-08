@@ -12,7 +12,10 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception{
 
-        httpSecurity.csrf().disable()
+        //if we comment csrf().disable() so we can not perform post request
+        //but when we add csrf().disable() so we can perform post request because nor its allows to send data by anyone.
+        httpSecurity.
+                 csrf().disable()
                 .authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
                 .httpBasic(Customizer.withDefaults());
 
